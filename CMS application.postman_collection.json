@@ -1,0 +1,40 @@
+{
+	"info": {
+		"_postman_id": "dbe95084-caf4-4f53-ad2b-423febef77b8",
+		"name": "CMS application",
+		"description": "StartFragment\n\n**User Registration and Authentication**\n\n1. Create a request: \"User Registration\"\n    \n    - Method: POST\n        \n    - URL: `http://127.0.0.1:8000/api/register/`\n        \n    - Body: JSON with `username`, `email`, and `password`\n        \n    - Save response JSON path: `access_token`\n        \n\n2\\. Create a request: \"User Login\"\n\n- Method: POST\n    \n- URL: `http://127.0.0.1:8000/api/token/`\n    \n- Body: JSON with `username` and `password`\n    \n- Save response JSON path: `access`\n    \n\n**Step 3: Post CRUD Operations**\n\n1. Create a request: \"Create Post\"\n    \n    - Method: POST\n        \n    - URL: `http://127.0.0.1:8000/api/posts/`\n        \n    - Headers: `Authorization: Bearer {{access_token}}`\n        \n    - Body: JSON with post details\n        \n2. Create a request: \"Get All Posts\"\n    \n    - Method: GET\n        \n    - URL: `http://127.0.0.1:8000/api/posts/`\n        \n3. Create a request: \"Get Post by ID\"\n    \n    - Method: GET\n        \n    - URL: `http://127.0.0.1:8000/api/posts/{{post_id}}/`\n        \n4. Create a request: \"Update Post\"\n    \n    - Method: PUT\n        \n    - URL: `http://127.0.0.1:8000/api/posts/{{post_id}}/`\n        \n    - Headers: `Authorization: Bearer {{access_token}}`\n        \n    - Body: Updated post details\n        \n5. Create a request: \"Delete Post\"\n    \n    - Method: DELETE\n        \n    - URL: `http://127.0.0.1:8000/api/posts/{{post_id}}/`\n        \n    - Headers: `Authorization: Bearer {{access_token}}`\n        \n6. Create a request: \"Bulk Delete Posts\"\n    \n    - Method: DELETE\n        \n    - URL: `http://127.0.0.1:8000/api/posts/bulk_delete/`\n        \n    - Headers: `Authorization: Bearer {{access_token}}`\n        \n\n**Step 4: Like a Post**\n\n1. Create a request: \"Like a Post\"\n    \n    - Method: POST\n        \n    - URL: `http://127.0.0.1:8000/api/posts/{{post_id}}/like/`\n        \n    - Headers: `Authorization: Bearer {{access_token}}`\n        \n    - Body: JSON with `user_id`\n        \n\nRemember to replace placeholders like `{{access_token}}`, `{{post_id}}`, and `{{user_id}}` with actual values when sending requests.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26307091"
+	},
+	"item": [],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkxOTkwODkzLCJpYXQiOjE2OTE5ODcyOTMsImp0aSI6ImYyYjk5NzU1YWRmZjRmYWZhMTM1OWU3MmUwM2MzNjRjIiwidXNlcl9pZCI6MTl9.vKcJzGJ1Vz0XpGndHqzMci8ReUEYcbGVkZYYTCddsMc",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
